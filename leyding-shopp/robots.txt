@@ -1,0 +1,51 @@
+# Разрешено индексирование всем поисковым роботам (User-agent: *)
+# Закрыты служебные директории и параметры URL
+# Разрешена индексация медиа-ресурсов (фото тренировок, матчей)
+# Открыт доступ к CSS/JS для корректного отображения
+# Разрешено сканирование fb и Instagram для публикации ссылок
+# Указаны пути к картам сайта
+# Очистка UTM-меток для Яндекса
+# Указание основного зеркала (Host)
+
+User-agent: *
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /search/
+Disallow: /?
+Disallow: /*?
+Allow: /assets/
+Allow: /images/
+Allow: /js/
+Allow: /css/
+
+Sitemap: http://localhost:5177/sitemap.xml
+Sitemap: http://localhost:5177/sitemap.xml.gz
+
+# Для Yandex
+User-agent: Yandex
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Clean-param: ref /blog/
+Clean-param: utm_source&utm_medium&utm_campaign /
+
+# Для Google
+User-agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
+Disallow: /print/
+Disallow: /ajax/
+
+# Для социальных сетей
+User-agent: FbBot
+Disallow: 
+
+User-agent: InstagramBot
+Disallow: 
+
+# Кэширование
+Host: leyding-shopp.ru
+
